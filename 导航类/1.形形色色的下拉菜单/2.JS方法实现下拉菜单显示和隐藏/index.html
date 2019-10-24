@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" href="./base.css">
+  <script src="./index.js"></script>
+	<style>
+	#nav{
+		background-color: tan;
+		width: 600px;
+		height: 40px;
+		margin: 0 auto;
+	}
+	ul li{
+		float: left;
+	/*	width: 90px;*/
+	/*padding: 0 10px;*/
+		line-height: 40px;
+		text-align: center;
+		position: relative; 
+	}
+	ul li ul{
+		position: absolute;
+		left: 0px;
+		top: 40px;
+    display: none;
+	}
+	ul li ul li{
+	float: none;
+	background-color: #0084FF;
+	margin-top: 5px;
+	}
+	ul li ul li a:hover{
+		background-color: #009A61;
+	}
+
+	a{
+		color: black;
+	display: block;
+	padding: 0 10px;
+	}
+	a:hover{
+		color: orange;
+		background-color: #ccc;
+	}
+	</style>
+</head>
+<body>
+	<div id="nav">
+	<ul>
+		<li><a href="#">首页</a></li>
+		<li onmouseover="show(this)" onmouseout="hide(this)"><a href="#">课程大厅</a>
+			<ul>
+				<li><a href="#">javascript</a></li>
+				<li><a href="#">JQuery</a></li>
+				<li><a href="#">Vue.js</a></li>
+			</ul>
+		</li>
+		<li  onmouseover="show(this)" onmouseout="hide(this)"><a href="#">学习中心</a>
+			<ul>
+				<li><a href="#">javascript</a></li>
+				<li><a href="#">JQuery</a></li>
+				<li><a href="#">Vue.js</a></li>
+			</ul>
+		</li>
+		<li><a href="#">课程案例</a></li>
+		<li><a href="#">关于我们</a></li>
+	</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .nav {
+            font-size: 14px;
+            font-weight: bold;
+            list-style: none;
+            width: 960px;
+            margin-left: 25%;
+
+        }
+
+        .nav li {
+            float: left;
+            margin-right: 2px;
+
+        }
+
+        .nav li a {
+
+            line-height: 30px;
+            text-decoration: none;
+            background-color: tan;
+            display: block;
+            width: 80px;
+            text-align: center;
+            color: teal
+        }
+
+        .nav ul {
+            list-style: none;
+            display: none;
+            padding: 0;
+            position: absolute;
+            height: 0;
+            overflow: hidden; 
+        }
+
+        .nav li a:hover {
+            background: url(images/slide-pannel_14.png) 0 0 repeat-x;
+        }
+
+        .note {
+            color: darkgrey;
+            display: block;
+            background: url(images/slide-pannel_14.png) 0 0 repeat-x;
+        }
+
+        .arr {
+            display: block;
+            height: 11px;
+            background: url(images/bird.png) 31px 0 no-repeat;
+        }
+    </style>
+    <script>
+   
+        var t_over,t_leave;
+        window.onload = function () {
+            var Lis = document.getElementsByTagName("li");
+            //鼠标经过时的效果
+            for(var i=0;i<Lis.length;i++){
+                Lis[i].onmouseover = function () {
+                    var u = this.getElementsByTagName("ul")[0];
+                    if (u != undefined) {
+                        u.style.display="block";
+                        clearTimeout(t_leave);
+                        ChangeH(u.id,1);
+                    }
+                };
+                Lis[i].onmouseleave = function () {
+                    var u = this.getElementsByTagName("ul")[0];
+                    if (u != undefined) {
+                        clearTimeout(t_over);
+                        ChangeH(u.id,-1);
+                    }
+                };
+            }
+        };
+ 
+        function ChangeH(id, count) {
+            //	根据ID找到ulList，同时得到其高度
+            var ulList = document.getElementById(id);
+            var h = ulList.offsetHeight;
+ 
+            h += count;
+            if (count > 0) {
+                if (h <= 42) {
+                    //	将高度赋值给ulList，同时，不断调用本函数
+                    ulList.style.height = h + "px";
+                    t_over = setTimeout("ChangeH('" + id + "',1)", 10);
+                }
+                else {
+                    return;
+                }
+            }
+            else {
+                if (h > 0) {
+                    //	将高度赋值给ulList，同时，不断调用本函数
+                    ulList.style.height = h + "px";
+                    t_leave = setTimeout("ChangeH('" + id + "',-1)", 10);
+                }
+                else {
+                    ulList.style.display = "none";
+                    return;
+                }
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li> <a href="#"><span class="note">首页</span></a></li>
+        <li><a href="#">课程大厅</a></li>
+        <li> <a href="#">学习中心</a> 
+            <ul id="nav_ul">
+                <span class="arr"></span>
+                <li> <a href="#">前端课程</a> </li>
+                <li><a href="#">移动开发</a></li>
+                <li><a href="#">web开发</a></li> 
+            </ul>
+        </li>
+        <li>
+            <a href="#">关于我们</a>
+        </li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 0 5px;
+            display: block;
+        }
+        .nav li{
+            display: block;
+            float: left;
+            margin: 5px;
+            background-color: brown;
+            width: 150px;
+            text-align: center;
+            color: white;
+            font-size: 10pt;
+        }
+        #logo{
+            background-color: white;
+            width: 230px;
+
+        }
+        #logo a{
+            color: grey;
+            font-size: 20pt;
+            background: white;
+        }
+        #top_logo{
+            display: none;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #top_logo a{
+            color: black;
+            font-size: 20pt;
+        }
+        .icon{
+            display: none;
+
+        }
+        @media only screen and(min-width:585px) and (max-width:823px){
+            #logo{
+                display: none;
+            }
+            #top_logo{
+                display: block;
+                width: 100%;
+            }
+            .nav{
+                width: 585px;
+            }
+        }
+        @media only screen and(max-width:585px){
+            #logo{
+                display: none;
+            }
+            #top_logo{
+                display: block; 
+            }
+            .nav{
+                width: 100%;
+            }
+            .nav li {
+                width: 100%;
+
+            }
+            .icon{
+                display: block;
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <div id="top_logo">
+            <a href="#">练习页面</a>
+            <a href="#" class="icon"><img src="./images/icon.png" alt=""></a>
+        </div>
+        <li><a href="#">学习学习</a><br />
+            前端课程
+        </li>
+        <li><a href="#">学习学习</a><br />
+            前端课程
+        </li>
+        <li id="logo"><a href="#">学习中心</a><br />
+            前端课程
+        </li>
+        <li><a href="#">学习学习</a><br />
+            前端课程
+        </li>
+        <li><a href="#">学习学习</a><br />
+            前端课程
+        </li>
+    </ul>
+</body>
+
+</html>

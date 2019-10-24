@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="login-top"><a href="javascript:void(0);" id="link">点击,弹出登录框</a></div>
+    <div id="login" class="login">
+        <div id="title" class="login-title">会员登录
+            <span><a href="javascript:void(0);" id="closeBtn" class="close-login">关闭</a></span>
+        </div>
+        <div class="login-input-content">
+            <div class="login-input">
+                <label >用户名:</label>
+                <input type="text" placeholder="请输用户名" name="info[username]" class="list-input" id="username">
+            </div>
+            <div class="login-input">
+                <label >登录密码:</label>
+                <input type="text" placeholder="请输密码" name="info[password]" class="list-input" id="password">
+            </div>
+        </div>
+        <div id="loginBtn" class="login-button"><a href="javascript:void(0);" id="login-button-submit">登录会员</a></div>
+    </div>
+    <!-- 遮盖层 -->
+    <div id="cover" class="login-cover"></div>
+    
+</body>
+</html>

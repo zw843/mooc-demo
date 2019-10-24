@@ -1,0 +1,73 @@
+#sidebar{
+    width: 50px;
+    background-color:gray;
+    padding-top: 200px;
+    position: fixed;
+    min-height: 100%;
+    z-index: 1000;
+}
+.item{
+    font-size: 14px;
+    font-family: '微软雅黑';
+    text-align: center;
+    margin-top: 5px;
+}
+#closeBar{
+    position: absolute;
+    bottom: 30px;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.nav_content{
+    width: 200px;
+    position: fixed;
+    min-height: 100%; 
+    background-color: #e1e1e1;
+    border: 1px solid rgb(194, 190, 190);
+    z-index: 999;
+    opacity: 0;
+}
+.nav_con_close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.sidebar-move-lfet{
+    /* left: -150px; */
+    -webkit-animation-name: sml;
+animation-name: sml;
+-webkit-animation-direction: 5s;
+animation-direction: 5s;
+-webkit-animation-iteration-count: 1;
+animation-iteration-count: 1;
+-webkit-animation-fill-mode: forwards;
+animation-fill-mode: forwards;
+}
+@keyframes sml{
+    from{
+    }
+    to{
+        -webkit-transform: translateX(-150px);
+        transform: translateX(-150px);
+    }
+}
+.closeBar-move-right{
+    /* left:190px; */
+    -webkit-animation-name: cmr;
+    animation-name: cmr;
+    -webkit-animation-direction: 5s;
+    animation-direction: 5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cmr{
+    from{
+    }
+    to{
+        -webkit-transform: translateX(190px) rotate(405deg) scale(1.5);
+        transform: translateX(190px) rotate(45deg) scale(1.5);
+    }
+}
